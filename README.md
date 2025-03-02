@@ -1,5 +1,7 @@
 # IROAD X Series
 
+Product: https://www.iroadau.com.au
+
 ## Finding 1: Default credentials for SSID [CWE-1393]
 The IROAD X5 dashcam broadcasts a fixed SSID with default credentials that cannot be changed. This allows any nearby attacker to connect to the dashcam’s network without restriction. Once connected, an attacker can sniff on connected devices such as the user’s smartphone. The SSID is also always broadcasted.
 
