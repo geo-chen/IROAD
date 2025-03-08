@@ -23,6 +23,9 @@ The IROAD X5 dashcam exposes API endpoints on ports 9091 and 9092 that allow rem
 ## Finding 5: Managing Settings to Obtain Sensitive Data and Sabotaging Car Battery
 The IROAD X5 dashcam allows unauthorized users to modify critical system settings once connected to its network. Attackers can extract sensitive car and driver information, mute dashcam alerts to prevent detection, disable recording functionality, or even factory reset the device. Additionally, they can disable battery protection, causing the dashcam to drain the car battery when left on overnight. These actions not only compromise privacy but also pose potential physical harm by rendering the dashcam non-functional or causing vehicle battery failure.
 
+![image](https://github.com/user-attachments/assets/0a00b49b-39d3-4163-8e05-9d32b159a34f)
+
+
 ## Finding 6: Public Domain Used for Internal Domain Name
 The IROAD dashcams uses an unregistered public domain name as internal domain, creating a security risk. During analysis, it was found that this domain was not owned by IROAD, allowing an attacker to register it and potentially intercept sensitive device traffic. If the dashcam or related services attempt to resolve this domain over the internet instead of locally, it could lead to data exfiltration or man-in-the-middle attacks. The vendor has been contacted regarding the potential impact of this issue.
 
