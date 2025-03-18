@@ -44,9 +44,7 @@ The IROAD FX2 dashcam lacks authentication controls on its HTTP and RTSP interfa
 The IROAD FX2 dashcam stores its root credentials in the /etc/passwd and /etc/shadow files, which can be accessed once an attacker connects to its network and bypasses device registration. By extracting and cracking the password hash, the privileged login root:tina is revealed. Furthermore, the WiFi password is stored in plaintext in configuration files such as hostapd.conf, making it easy for attackers to retrieve and use for persistent unauthorized access.
 
 ## Finding 10: Unauthenticated Uploads
-The IROAD FX2 dashcam exposes an unauthenticated file upload endpoint at http://192.168.10.1/action/upload_file, allowing an attacker to upload arbitrary files to the dashcam’s storage. This can be exploited to overwrite critical configuration files, such as setup.ini, changing the SSID password and locking the original user out of their device. Attackers can also replace IROAD_XVIEW_Windows.url with a malicious link to trick users into downloading malware onto their devices.
-
-![image](https://github.com/user-attachments/assets/d0d06b20-8f70-4fd1-bae7-ad90734c5496)
+The IROAD FX2 dashcam exposes an unauthenticated file upload endpoint at http://192.168.10.1/action/upload_file, allowing an attacker to upload arbitrary files to the dashcam’s storage.
 
 
 ## Finding 11: Unrestricted Webshell
@@ -54,4 +52,12 @@ The IROAD FX2 dashcam’s unauthenticated file upload endpoint can be leveraged 
 
 ![image](https://github.com/user-attachments/assets/f66f572e-1d62-4f66-b5b3-46d1c1611943)
 
+## Finding 12 - CVE-2025-30133: Unprotected URL Shortcut
+An attacker can either edit the IROAD viewer url on the SD card locally, or edit it remotely via the unauthenticated upload endpoint. The url shortcut file, IROAD_XVIEW_Windows.url, is not write-protected nor access-restricted and can be rewritten to point to an attacker-controlled page to download malware to cause infection, instead of the official dashcam viewer, on the owner's device.
+
+![image](https://github.com/user-attachments/assets/d0d06b20-8f70-4fd1-bae7-ad90734c5496)
+
+
+## Finding 13 - CVE-2025-30133: Locking Owner Out of Device (DoS)
+While the IROAD FX2 dahcam does not allow nor offer a way to change the wifi password, an attacker could change it by downloading the configuration file, ie setup.ini, and changing the wifi password. Because the app does not offer anyways to change the password and there are no physical reset buttons, the owner has no way of getting back access to the dashcam. Since the password has been changed, there's no way for the owner to perform a factory reset as well.
 
