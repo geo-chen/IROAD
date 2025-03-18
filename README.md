@@ -59,5 +59,4 @@ An attacker can either edit the IROAD viewer url on the SD card locally, or edit
 
 
 ## Finding 13 - CVE-2025-30133: Locking Owner Out of Device (DoS)
-While the IROAD FX2 dahcam does not allow nor offer a way to change the wifi password, an attacker could change it by downloading the configuration file, ie setup.ini, and changing the wifi password. Because the app does not offer anyways to change the password and there are no physical reset buttons, the owner has no way of getting back access to the dashcam. Since the password has been changed, there's no way for the owner to perform a factory reset as well.
-
+While the IROAD FX2 Dashcam does not allow nor offer a way to change the wifi password, an attacker could change it by downloading the configuration file, ie setup.ini, changing the wifi password, and uploading it to take effect. Because the app does not offer any way to change the password and there are no physical reset buttons, the owner has no way of getting back access to the dashcam. Since the password has been changed, there's no way for the owner to connect back and perform a factory reset as well.
