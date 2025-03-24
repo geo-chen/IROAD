@@ -47,7 +47,7 @@ The IROAD FX2 dashcam stores its root credentials in the /etc/passwd and /etc/sh
 The IROAD FX2 dashcam exposes an unauthenticated file upload endpoint at http://192.168.10.1/action/upload_file, allowing an attacker to upload arbitrary files to the dashcam’s storage.
 
 ## Finding 11 - CVE-2025-30131: Unrestricted Webshell
-The IROAD FX2 dashcam’s unauthenticated file upload endpoint can be leveraged to execute arbitrary commands by uploading a CGI-based webshell. Once uploaded, the attacker can execute commands with root privileges, gaining full control over the dashcam. Additionally, by uploading a netcat (nc) binary, the attacker can establish a reverse shell, maintaining persistent remote and privileged access to the device. This critical vulnerability allows for complete device takeover.
+The IROAD FX2 dashcam’s unauthenticated file upload endpoint can be leveraged to execute arbitrary commands by uploading a CGI-based webshell. Once uploaded, the attacker can execute commands with root privileges, gaining full control over the dashcam. Additionally, by uploading a netcat (nc) binary, the attacker can establish a reverse shell, maintaining persistent remote and privileged access to the device. This critical vulnerability allows for complete device takeover and RCE.
 
 ![image](https://github.com/user-attachments/assets/f66f572e-1d62-4f66-b5b3-46d1c1611943)
 
